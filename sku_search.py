@@ -31,3 +31,6 @@ while True:
     print("Done!")
     end = time()
     print(f"Time taken: {end - start} seconds.")
+    google = input("Would you like to run a google query of the SKU? (y/n) > ")
+    if google.lower() == "y":
+        webbrowser.open(f'https://www.google.com/search?q="{sku}"')
