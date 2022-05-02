@@ -21,8 +21,13 @@ while True:
         thread = threading.Thread(target = search_sku, args = (store, sku))
         threads.append(thread)
         thread.start()
+    count = 0
+    print("Loading...")
     while any([i.is_alive() for i in threads]):
-        pass
+        done = [not i.is_alive() for i in threads].count(True)
+        if done != count:
+            count = done
+            print("{0}/{1} sites checked...".format(done, len(stores)))
     print("Done!")
     end = time()
     print(f"Time taken: {end - start} seconds.")
