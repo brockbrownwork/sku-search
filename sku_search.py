@@ -3,7 +3,7 @@ import webbrowser
 import threading
 from time import sleep, time
 
-stores = ['zales', 'jared', 'kay', 'peoplesjewellers']
+stores = ['zales', 'zalesoutlet', 'jared', 'kay', 'peoplesjewellers']
 
 def search_sku(store_name, sku):
     r = requests.get(f"http://www.{store}.com/search?text={sku}")
